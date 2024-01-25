@@ -10,8 +10,8 @@ struct Spike
 	int numbers;
 	sf::Vector2f pos;
 	//sf::Sprite sprite;
-	void Save();
-	void Load();
+	void Save(std::ofstream&);
+	void Load(std::ifstream&);
 };
 
 #endif // !SPIKE_H

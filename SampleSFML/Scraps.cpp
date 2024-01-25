@@ -14,10 +14,10 @@ void Scraps::Save(std::ofstream& _file)
 		_file << "Elasticity " << elasticity << "\n";
 		_file << "PosX " << pos.x << "\n";
 		_file << "PosY " << pos.y << "\n";
-		/*for (int i = 0; i < sizeof(spikes); i++)
+		for (int i = 0; i < sizeof(spikes); i++)
 		{
 			spikes[i]->Save(_file);
-		}*/
+		}
 		_file << "Shape " << shape << "\n";
 		_file << "Sprite " << spriteID << "\n";
 		_file << "END";
@@ -33,38 +33,38 @@ Scraps Scraps::Load(std::ifstream& _file)
 	{
 		while (value != "END")
 		{
-			_file >> value;
+			 _file >> value;
 			if (value == "Speed")
 			{
-				_file >> tempScrap.speed;
+				tempScrap.speed = GetFloatFromFStream(_file);
 			}
 			else if (value == "Width")
 			{
-				_file >> tempScrap.width;
+				 tempScrap.width = GetFloatFromFStream(_file);
 			}
 			else if (value == "Height")
 			{
-				_file >> tempScrap.height;
+				 tempScrap.height = GetFloatFromFStream(_file);
 			}
 			else if (value == "Friction")
 			{
-				_file >> tempScrap.friction;
+				 tempScrap.friction = GetFloatFromFStream(_file);
 			}
 			else if (value == "Density")
 			{
-				_file >> tempScrap.density;
+				 tempScrap.density = GetFloatFromFStream(_file);
 			}
 			else if (value == "Elasticity")
 			{
-				_file >> tempScrap.elasticity;
+				 tempScrap.elasticity = GetFloatFromFStream(_file);
 			}
 			else if (value == "PosX")
 			{
-				_file >> tempScrap.pos.x;
+				 tempScrap.pos.x = GetFloatFromFStream(_file);
 			}
 			else if (value == "PosY")
 			{
-				_file >> tempScrap.pos.y;
+				 tempScrap.pos.y = GetFloatFromFStream(_file);
 			}
 			else if (value == "Shape")
 			{
@@ -78,7 +78,7 @@ Scraps Scraps::Load(std::ifstream& _file)
 			}
 			else if (value == "Spike")
 			{
-				//tempScrap.spikes[spikesNumbers]->Load(_file);
+				tempScrap.spikes[spikesNumbers]->Load(_file);
 			}
 		}
 		return tempScrap;

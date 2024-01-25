@@ -1,0 +1,11 @@
+SCRAP
+Speed 4462.23
+Height 6456
+Width 65
+Friction 3
+Density 5
+Elasticity 9
+Pos 89 31
+Shape 3
+Sprite OUIOUIJESUISUNSPRITE
+END

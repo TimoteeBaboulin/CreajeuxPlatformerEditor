@@ -19,7 +19,7 @@ struct Scraps
 	sf::Sprite sprite;
 	std::string spriteID;
 	void Save(std::ofstream&);
-	void Load(std::ifstream&);
+	static Scraps Load(std::ifstream&);
 };
 
 #endif // !SCRAPS_H
