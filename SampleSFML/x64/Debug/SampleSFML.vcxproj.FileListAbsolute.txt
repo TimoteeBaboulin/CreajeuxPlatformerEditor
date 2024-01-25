@@ -2,3 +2,7 @@ C:\Users\Etudiant1\Documents\LocalRepository\CreajeuxPlatformerEditor\SampleSFML
 C:\Users\Etudiant1\Documents\LocalRepository\CreajeuxPlatformerEditor\SampleSFML\x64\Debug\SampleSFML.PlatformEditor.resources
 C:\Users\Etudiant1\Documents\LocalRepository\CreajeuxPlatformerEditor\SampleSFML\x64\Debug\SampleSFML.vcxproj.GenerateResource.cache
 C:\Users\Etudiant1\Documents\LocalRepository\CreajeuxPlatformerEditor\SampleSFML\x64\Debug\SampleSFML.exe
+C:\Users\Etudiant1\Documents\GitHub\CreajeuxPlatformerEditor\SampleSFML\x64\Debug\SampleSFML.vcxproj.AssemblyReference.cache
+C:\Users\Etudiant1\Documents\GitHub\CreajeuxPlatformerEditor\SampleSFML\x64\Debug\SampleSFML.PlatformEditor.resources
+C:\Users\Etudiant1\Documents\GitHub\CreajeuxPlatformerEditor\SampleSFML\x64\Debug\SampleSFML.vcxproj.GenerateResource.cache
+C:\Users\Etudiant1\Documents\GitHub\CreajeuxPlatformerEditor\SampleSFML\x64\Debug\SampleSFML.exe
