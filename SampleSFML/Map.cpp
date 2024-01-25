@@ -4,3 +4,7 @@ void Map::DisplayMap(sf::RenderWindow& _window)
 {
 
 }
+
+void Map::SaveMap()
+{
+}
