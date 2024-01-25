@@ -150,8 +150,13 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Platform.cpp" />
     <ClCompile Include="PlatformEditor.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Scraps.cpp" />
+    <ClCompile Include="Spike.cpp" />
     <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="Tile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -163,10 +168,15 @@
   <ItemGroup>
     <ClInclude Include="common.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="Platform.h" />
     <ClInclude Include="PlatformEditor.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Scraps.h" />
+    <ClInclude Include="Spike.h" />
     <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="Tile.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PlatformEditor.resx">
