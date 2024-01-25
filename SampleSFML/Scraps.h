@@ -17,8 +17,9 @@ struct Scraps
 	Spike** spikes = nullptr;
 	Shape shape = SQUARE;
 	sf::Sprite sprite;
-	void Save();
-	void Load();
+	std::string spriteID;
+	void Save(std::ofstream&);
+	void Load(std::ifstream&);
 };
 
 #endif // !SCRAPS_H
