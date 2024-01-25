@@ -71,6 +71,22 @@ namespace SampleSFML {
 	private: System::Windows::Forms::Label^ platformPositionLabel;
 	private: System::Windows::Forms::Label^ platformShapeLabel;
 
+	private: System::Windows::Forms::ComboBox^ platformAxisValueComboBox;
+	private: System::Windows::Forms::TextBox^ platformSpeedValueTextBox;
+	private: System::Windows::Forms::TextBox^ platformAxisValueTextBox;
+	private: System::Windows::Forms::Label^ platformFrictionLabel;
+	private: System::Windows::Forms::Label^ platformDensityLabel;
+	private: System::Windows::Forms::TextBox^ platformHeightValueTextBox;
+
+	private: System::Windows::Forms::TextBox^ platformlengthValueTextBox;
+	private: System::Windows::Forms::ComboBox^ platformShapeValueComboBox;
+	private: System::Windows::Forms::ComboBox^ platformStabilityValueComboBox;
+	private: System::Windows::Forms::TextBox^ platformFrictionValueTextBox;
+	private: System::Windows::Forms::TextBox^ platformDensityValueTextBox;
+	private: System::Windows::Forms::TextBox^ platformXValueTextBox;
+	private: System::Windows::Forms::TextBox^ platformYValueTextBox;
+
+
 
 
 
@@ -121,6 +137,19 @@ namespace SampleSFML {
 			this->platformStabilityLabel = (gcnew System::Windows::Forms::Label());
 			this->platformShapeLabel = (gcnew System::Windows::Forms::Label());
 			this->platformPositionLabel = (gcnew System::Windows::Forms::Label());
+			this->platformSpeedValueTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->platformAxisValueComboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->platformAxisValueTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->platformDensityLabel = (gcnew System::Windows::Forms::Label());
+			this->platformFrictionLabel = (gcnew System::Windows::Forms::Label());
+			this->platformlengthValueTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->platformHeightValueTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->platformStabilityValueComboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->platformShapeValueComboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->platformYValueTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->platformXValueTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->platformDensityValueTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->platformFrictionValueTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->tabListMenuStrip->SuspendLayout();
 			this->fileManagerGroupBox->SuspendLayout();
 			this->gameParametersGroupBox->SuspendLayout();
@@ -253,14 +282,28 @@ namespace SampleSFML {
 			// 
 			// platformPanel
 			// 
-			this->platformPanel->Controls->Add(this->platformPositionLabel);
-			this->platformPanel->Controls->Add(this->platformShapeLabel);
-			this->platformPanel->Controls->Add(this->platformStabilityLabel);
-			this->platformPanel->Controls->Add(this->platformHeightLabel);
+			this->platformPanel->AutoScroll = true;
+			this->platformPanel->Controls->Add(this->platformFrictionLabel);
 			this->platformPanel->Controls->Add(this->platformObstaclesLabel);
-			this->platformPanel->Controls->Add(this->platformAxisLabel);
-			this->platformPanel->Controls->Add(this->platformSpeedLabel);
+			this->platformPanel->Controls->Add(this->platformFrictionValueTextBox);
+			this->platformPanel->Controls->Add(this->platformDensityValueTextBox);
+			this->platformPanel->Controls->Add(this->platformDensityLabel);
+			this->platformPanel->Controls->Add(this->platformXValueTextBox);
+			this->platformPanel->Controls->Add(this->platformYValueTextBox);
+			this->platformPanel->Controls->Add(this->platformShapeValueComboBox);
+			this->platformPanel->Controls->Add(this->platformStabilityValueComboBox);
+			this->platformPanel->Controls->Add(this->platformPositionLabel);
+			this->platformPanel->Controls->Add(this->platformHeightValueTextBox);
+			this->platformPanel->Controls->Add(this->platformlengthValueTextBox);
+			this->platformPanel->Controls->Add(this->platformAxisValueTextBox);
+			this->platformPanel->Controls->Add(this->platformAxisValueComboBox);
+			this->platformPanel->Controls->Add(this->platformShapeLabel);
+			this->platformPanel->Controls->Add(this->platformSpeedValueTextBox);
 			this->platformPanel->Controls->Add(this->platformLengthLabel);
+			this->platformPanel->Controls->Add(this->platformStabilityLabel);
+			this->platformPanel->Controls->Add(this->platformSpeedLabel);
+			this->platformPanel->Controls->Add(this->platformAxisLabel);
+			this->platformPanel->Controls->Add(this->platformHeightLabel);
 			this->platformPanel->Location = System::Drawing::Point(7, 19);
 			this->platformPanel->Name = L"platformPanel";
 			this->platformPanel->Size = System::Drawing::Size(283, 182);
@@ -286,7 +329,7 @@ namespace SampleSFML {
 			// platformLengthLabel
 			// 
 			this->platformLengthLabel->AutoSize = true;
-			this->platformLengthLabel->Location = System::Drawing::Point(4, 4);
+			this->platformLengthLabel->Location = System::Drawing::Point(11, 8);
 			this->platformLengthLabel->Name = L"platformLengthLabel";
 			this->platformLengthLabel->Size = System::Drawing::Size(40, 13);
 			this->platformLengthLabel->TabIndex = 0;
@@ -295,7 +338,7 @@ namespace SampleSFML {
 			// platformSpeedLabel
 			// 
 			this->platformSpeedLabel->AutoSize = true;
-			this->platformSpeedLabel->Location = System::Drawing::Point(4, 21);
+			this->platformSpeedLabel->Location = System::Drawing::Point(11, 33);
 			this->platformSpeedLabel->Name = L"platformSpeedLabel";
 			this->platformSpeedLabel->Size = System::Drawing::Size(38, 13);
 			this->platformSpeedLabel->TabIndex = 1;
@@ -304,7 +347,7 @@ namespace SampleSFML {
 			// platformAxisLabel
 			// 
 			this->platformAxisLabel->AutoSize = true;
-			this->platformAxisLabel->Location = System::Drawing::Point(4, 38);
+			this->platformAxisLabel->Location = System::Drawing::Point(11, 60);
 			this->platformAxisLabel->Name = L"platformAxisLabel";
 			this->platformAxisLabel->Size = System::Drawing::Size(26, 13);
 			this->platformAxisLabel->TabIndex = 2;
@@ -313,7 +356,7 @@ namespace SampleSFML {
 			// platformObstaclesLabel
 			// 
 			this->platformObstaclesLabel->AutoSize = true;
-			this->platformObstaclesLabel->Location = System::Drawing::Point(155, 4);
+			this->platformObstaclesLabel->Location = System::Drawing::Point(156, 120);
 			this->platformObstaclesLabel->Name = L"platformObstaclesLabel";
 			this->platformObstaclesLabel->Size = System::Drawing::Size(54, 13);
 			this->platformObstaclesLabel->TabIndex = 3;
@@ -322,7 +365,7 @@ namespace SampleSFML {
 			// platformHeightLabel
 			// 
 			this->platformHeightLabel->AutoSize = true;
-			this->platformHeightLabel->Location = System::Drawing::Point(4, 55);
+			this->platformHeightLabel->Location = System::Drawing::Point(11, 88);
 			this->platformHeightLabel->Name = L"platformHeightLabel";
 			this->platformHeightLabel->Size = System::Drawing::Size(38, 13);
 			this->platformHeightLabel->TabIndex = 4;
@@ -331,7 +374,7 @@ namespace SampleSFML {
 			// platformStabilityLabel
 			// 
 			this->platformStabilityLabel->AutoSize = true;
-			this->platformStabilityLabel->Location = System::Drawing::Point(4, 72);
+			this->platformStabilityLabel->Location = System::Drawing::Point(11, 115);
 			this->platformStabilityLabel->Name = L"platformStabilityLabel";
 			this->platformStabilityLabel->Size = System::Drawing::Size(43, 13);
 			this->platformStabilityLabel->TabIndex = 5;
@@ -340,7 +383,7 @@ namespace SampleSFML {
 			// platformShapeLabel
 			// 
 			this->platformShapeLabel->AutoSize = true;
-			this->platformShapeLabel->Location = System::Drawing::Point(4, 89);
+			this->platformShapeLabel->Location = System::Drawing::Point(11, 143);
 			this->platformShapeLabel->Name = L"platformShapeLabel";
 			this->platformShapeLabel->Size = System::Drawing::Size(38, 13);
 			this->platformShapeLabel->TabIndex = 7;
@@ -349,11 +392,113 @@ namespace SampleSFML {
 			// platformPositionLabel
 			// 
 			this->platformPositionLabel->AutoSize = true;
-			this->platformPositionLabel->Location = System::Drawing::Point(4, 106);
+			this->platformPositionLabel->Location = System::Drawing::Point(156, 8);
 			this->platformPositionLabel->Name = L"platformPositionLabel";
 			this->platformPositionLabel->Size = System::Drawing::Size(44, 13);
 			this->platformPositionLabel->TabIndex = 8;
 			this->platformPositionLabel->Text = L"Position";
+			// 
+			// platformSpeedValueTextBox
+			// 
+			this->platformSpeedValueTextBox->Location = System::Drawing::Point(57, 31);
+			this->platformSpeedValueTextBox->Name = L"platformSpeedValueTextBox";
+			this->platformSpeedValueTextBox->Size = System::Drawing::Size(66, 20);
+			this->platformSpeedValueTextBox->TabIndex = 10;
+			// 
+			// platformAxisValueComboBox
+			// 
+			this->platformAxisValueComboBox->FormattingEnabled = true;
+			this->platformAxisValueComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"None", L"X", L"Y", L"Radial" });
+			this->platformAxisValueComboBox->Location = System::Drawing::Point(57, 57);
+			this->platformAxisValueComboBox->Name = L"platformAxisValueComboBox";
+			this->platformAxisValueComboBox->Size = System::Drawing::Size(66, 21);
+			this->platformAxisValueComboBox->TabIndex = 11;
+			// 
+			// platformAxisValueTextBox
+			// 
+			this->platformAxisValueTextBox->Enabled = false;
+			this->platformAxisValueTextBox->Location = System::Drawing::Point(129, 57);
+			this->platformAxisValueTextBox->Name = L"platformAxisValueTextBox";
+			this->platformAxisValueTextBox->Size = System::Drawing::Size(41, 20);
+			this->platformAxisValueTextBox->TabIndex = 12;
+			// 
+			// platformDensityLabel
+			// 
+			this->platformDensityLabel->AutoSize = true;
+			this->platformDensityLabel->Location = System::Drawing::Point(156, 33);
+			this->platformDensityLabel->Name = L"platformDensityLabel";
+			this->platformDensityLabel->Size = System::Drawing::Size(42, 13);
+			this->platformDensityLabel->TabIndex = 9;
+			this->platformDensityLabel->Text = L"Density";
+			// 
+			// platformFrictionLabel
+			// 
+			this->platformFrictionLabel->AutoSize = true;
+			this->platformFrictionLabel->Location = System::Drawing::Point(156, 88);
+			this->platformFrictionLabel->Name = L"platformFrictionLabel";
+			this->platformFrictionLabel->Size = System::Drawing::Size(41, 13);
+			this->platformFrictionLabel->TabIndex = 10;
+			this->platformFrictionLabel->Text = L"Friction";
+			// 
+			// platformlengthValueTextBox
+			// 
+			this->platformlengthValueTextBox->Location = System::Drawing::Point(57, 5);
+			this->platformlengthValueTextBox->Name = L"platformlengthValueTextBox";
+			this->platformlengthValueTextBox->Size = System::Drawing::Size(66, 20);
+			this->platformlengthValueTextBox->TabIndex = 13;
+			// 
+			// platformHeightValueTextBox
+			// 
+			this->platformHeightValueTextBox->Location = System::Drawing::Point(57, 85);
+			this->platformHeightValueTextBox->Name = L"platformHeightValueTextBox";
+			this->platformHeightValueTextBox->Size = System::Drawing::Size(66, 20);
+			this->platformHeightValueTextBox->TabIndex = 14;
+			// 
+			// platformStabilityValueComboBox
+			// 
+			this->platformStabilityValueComboBox->FormattingEnabled = true;
+			this->platformStabilityValueComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Fixed", L"Tilt", L"Rotate" });
+			this->platformStabilityValueComboBox->Location = System::Drawing::Point(57, 112);
+			this->platformStabilityValueComboBox->Name = L"platformStabilityValueComboBox";
+			this->platformStabilityValueComboBox->Size = System::Drawing::Size(66, 21);
+			this->platformStabilityValueComboBox->TabIndex = 15;
+			// 
+			// platformShapeValueComboBox
+			// 
+			this->platformShapeValueComboBox->FormattingEnabled = true;
+			this->platformShapeValueComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Rectangle", L"Octogonal", L"Circle" });
+			this->platformShapeValueComboBox->Location = System::Drawing::Point(57, 140);
+			this->platformShapeValueComboBox->Name = L"platformShapeValueComboBox";
+			this->platformShapeValueComboBox->Size = System::Drawing::Size(66, 21);
+			this->platformShapeValueComboBox->TabIndex = 16;
+			// 
+			// platformYValueTextBox
+			// 
+			this->platformYValueTextBox->Location = System::Drawing::Point(245, 5);
+			this->platformYValueTextBox->Name = L"platformYValueTextBox";
+			this->platformYValueTextBox->Size = System::Drawing::Size(35, 20);
+			this->platformYValueTextBox->TabIndex = 17;
+			// 
+			// platformXValueTextBox
+			// 
+			this->platformXValueTextBox->Location = System::Drawing::Point(206, 5);
+			this->platformXValueTextBox->Name = L"platformXValueTextBox";
+			this->platformXValueTextBox->Size = System::Drawing::Size(35, 20);
+			this->platformXValueTextBox->TabIndex = 18;
+			// 
+			// platformDensityValueTextBox
+			// 
+			this->platformDensityValueTextBox->Location = System::Drawing::Point(206, 30);
+			this->platformDensityValueTextBox->Name = L"platformDensityValueTextBox";
+			this->platformDensityValueTextBox->Size = System::Drawing::Size(74, 20);
+			this->platformDensityValueTextBox->TabIndex = 19;
+			// 
+			// platformFrictionValueTextBox
+			// 
+			this->platformFrictionValueTextBox->Location = System::Drawing::Point(206, 85);
+			this->platformFrictionValueTextBox->Name = L"platformFrictionValueTextBox";
+			this->platformFrictionValueTextBox->Size = System::Drawing::Size(74, 20);
+			this->platformFrictionValueTextBox->TabIndex = 20;
 			// 
 			// PlatformEditor
 			// 
