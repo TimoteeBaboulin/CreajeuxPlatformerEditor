@@ -55,8 +55,24 @@ namespace SampleSFML {
 	private: System::Windows::Forms::GroupBox^ levelObstaclesGroupBox;
 	private: System::Windows::Forms::PictureBox^ levelEditorPictureBox;
 	private: System::Windows::Forms::GroupBox^ tileEditorGroupBox;
-	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Panel^ platformPanel;
+
 	private: System::Windows::Forms::PictureBox^ objectPictureBox;
+	private: System::Windows::Forms::Label^ platformSpeedLabel;
+
+	private: System::Windows::Forms::Label^ platformLengthLabel;
+	private: System::Windows::Forms::Label^ platformObstaclesLabel;
+
+
+	private: System::Windows::Forms::Label^ platformAxisLabel;
+
+	private: System::Windows::Forms::Label^ platformStabilityLabel;
+	private: System::Windows::Forms::Label^ platformHeightLabel;
+	private: System::Windows::Forms::Label^ platformPositionLabel;
+	private: System::Windows::Forms::Label^ platformShapeLabel;
+
+
+
 
 
 
@@ -86,25 +102,34 @@ namespace SampleSFML {
 			this->gameTabMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->levelTabMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->fileManagerGroupBox = (gcnew System::Windows::Forms::GroupBox());
+			this->loadLevelStatusLabel = (gcnew System::Windows::Forms::Label());
 			this->saveLevelStatusLabel = (gcnew System::Windows::Forms::Label());
 			this->loadLevelButton = (gcnew System::Windows::Forms::Button());
 			this->saveLevelButton = (gcnew System::Windows::Forms::Button());
-			this->loadLevelStatusLabel = (gcnew System::Windows::Forms::Label());
 			this->gameParametersGroupBox = (gcnew System::Windows::Forms::GroupBox());
 			this->playerSpritePixtureBox = (gcnew System::Windows::Forms::PictureBox());
 			this->levelObstaclesGroupBox = (gcnew System::Windows::Forms::GroupBox());
-			this->levelEditorPictureBox = (gcnew System::Windows::Forms::PictureBox());
 			this->tileEditorGroupBox = (gcnew System::Windows::Forms::GroupBox());
+			this->platformPanel = (gcnew System::Windows::Forms::Panel());
 			this->objectPictureBox = (gcnew System::Windows::Forms::PictureBox());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->levelEditorPictureBox = (gcnew System::Windows::Forms::PictureBox());
+			this->platformLengthLabel = (gcnew System::Windows::Forms::Label());
+			this->platformSpeedLabel = (gcnew System::Windows::Forms::Label());
+			this->platformAxisLabel = (gcnew System::Windows::Forms::Label());
+			this->platformObstaclesLabel = (gcnew System::Windows::Forms::Label());
+			this->platformHeightLabel = (gcnew System::Windows::Forms::Label());
+			this->platformStabilityLabel = (gcnew System::Windows::Forms::Label());
+			this->platformShapeLabel = (gcnew System::Windows::Forms::Label());
+			this->platformPositionLabel = (gcnew System::Windows::Forms::Label());
 			this->tabListMenuStrip->SuspendLayout();
 			this->fileManagerGroupBox->SuspendLayout();
 			this->gameParametersGroupBox->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->playerSpritePixtureBox))->BeginInit();
 			this->levelObstaclesGroupBox->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->levelEditorPictureBox))->BeginInit();
 			this->tileEditorGroupBox->SuspendLayout();
+			this->platformPanel->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->objectPictureBox))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->levelEditorPictureBox))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tabListMenuStrip
@@ -150,6 +175,15 @@ namespace SampleSFML {
 			this->fileManagerGroupBox->TabStop = false;
 			this->fileManagerGroupBox->Text = L"File Manager";
 			// 
+			// loadLevelStatusLabel
+			// 
+			this->loadLevelStatusLabel->AutoSize = true;
+			this->loadLevelStatusLabel->Location = System::Drawing::Point(165, 104);
+			this->loadLevelStatusLabel->Name = L"loadLevelStatusLabel";
+			this->loadLevelStatusLabel->Size = System::Drawing::Size(17, 13);
+			this->loadLevelStatusLabel->TabIndex = 3;
+			this->loadLevelStatusLabel->Text = L"nil";
+			// 
 			// saveLevelStatusLabel
 			// 
 			this->saveLevelStatusLabel->AutoSize = true;
@@ -176,15 +210,6 @@ namespace SampleSFML {
 			this->saveLevelButton->TabIndex = 0;
 			this->saveLevelButton->Text = L"Save Level";
 			this->saveLevelButton->UseVisualStyleBackColor = true;
-			// 
-			// loadLevelStatusLabel
-			// 
-			this->loadLevelStatusLabel->AutoSize = true;
-			this->loadLevelStatusLabel->Location = System::Drawing::Point(165, 104);
-			this->loadLevelStatusLabel->Name = L"loadLevelStatusLabel";
-			this->loadLevelStatusLabel->Size = System::Drawing::Size(17, 13);
-			this->loadLevelStatusLabel->TabIndex = 3;
-			this->loadLevelStatusLabel->Text = L"nil";
 			// 
 			// gameParametersGroupBox
 			// 
@@ -215,17 +240,9 @@ namespace SampleSFML {
 			this->levelObstaclesGroupBox->TabStop = false;
 			this->levelObstaclesGroupBox->Text = L"Level Obstacles";
 			// 
-			// levelEditorPictureBox
-			// 
-			this->levelEditorPictureBox->Location = System::Drawing::Point(259, 19);
-			this->levelEditorPictureBox->Name = L"levelEditorPictureBox";
-			this->levelEditorPictureBox->Size = System::Drawing::Size(200, 150);
-			this->levelEditorPictureBox->TabIndex = 0;
-			this->levelEditorPictureBox->TabStop = false;
-			// 
 			// tileEditorGroupBox
 			// 
-			this->tileEditorGroupBox->Controls->Add(this->panel1);
+			this->tileEditorGroupBox->Controls->Add(this->platformPanel);
 			this->tileEditorGroupBox->Controls->Add(this->objectPictureBox);
 			this->tileEditorGroupBox->Location = System::Drawing::Point(7, 175);
 			this->tileEditorGroupBox->Name = L"tileEditorGroupBox";
@@ -233,6 +250,21 @@ namespace SampleSFML {
 			this->tileEditorGroupBox->TabIndex = 1;
 			this->tileEditorGroupBox->TabStop = false;
 			this->tileEditorGroupBox->Text = L"Tile Editor";
+			// 
+			// platformPanel
+			// 
+			this->platformPanel->Controls->Add(this->platformPositionLabel);
+			this->platformPanel->Controls->Add(this->platformShapeLabel);
+			this->platformPanel->Controls->Add(this->platformStabilityLabel);
+			this->platformPanel->Controls->Add(this->platformHeightLabel);
+			this->platformPanel->Controls->Add(this->platformObstaclesLabel);
+			this->platformPanel->Controls->Add(this->platformAxisLabel);
+			this->platformPanel->Controls->Add(this->platformSpeedLabel);
+			this->platformPanel->Controls->Add(this->platformLengthLabel);
+			this->platformPanel->Location = System::Drawing::Point(7, 19);
+			this->platformPanel->Name = L"platformPanel";
+			this->platformPanel->Size = System::Drawing::Size(283, 182);
+			this->platformPanel->TabIndex = 1;
 			// 
 			// objectPictureBox
 			// 
@@ -243,12 +275,85 @@ namespace SampleSFML {
 			this->objectPictureBox->TabIndex = 0;
 			this->objectPictureBox->TabStop = false;
 			// 
-			// panel1
+			// levelEditorPictureBox
 			// 
-			this->panel1->Location = System::Drawing::Point(7, 19);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(283, 182);
-			this->panel1->TabIndex = 1;
+			this->levelEditorPictureBox->Location = System::Drawing::Point(259, 19);
+			this->levelEditorPictureBox->Name = L"levelEditorPictureBox";
+			this->levelEditorPictureBox->Size = System::Drawing::Size(200, 150);
+			this->levelEditorPictureBox->TabIndex = 0;
+			this->levelEditorPictureBox->TabStop = false;
+			// 
+			// platformLengthLabel
+			// 
+			this->platformLengthLabel->AutoSize = true;
+			this->platformLengthLabel->Location = System::Drawing::Point(4, 4);
+			this->platformLengthLabel->Name = L"platformLengthLabel";
+			this->platformLengthLabel->Size = System::Drawing::Size(40, 13);
+			this->platformLengthLabel->TabIndex = 0;
+			this->platformLengthLabel->Text = L"Length";
+			// 
+			// platformSpeedLabel
+			// 
+			this->platformSpeedLabel->AutoSize = true;
+			this->platformSpeedLabel->Location = System::Drawing::Point(4, 21);
+			this->platformSpeedLabel->Name = L"platformSpeedLabel";
+			this->platformSpeedLabel->Size = System::Drawing::Size(38, 13);
+			this->platformSpeedLabel->TabIndex = 1;
+			this->platformSpeedLabel->Text = L"Speed";
+			// 
+			// platformAxisLabel
+			// 
+			this->platformAxisLabel->AutoSize = true;
+			this->platformAxisLabel->Location = System::Drawing::Point(4, 38);
+			this->platformAxisLabel->Name = L"platformAxisLabel";
+			this->platformAxisLabel->Size = System::Drawing::Size(26, 13);
+			this->platformAxisLabel->TabIndex = 2;
+			this->platformAxisLabel->Text = L"Axis";
+			// 
+			// platformObstaclesLabel
+			// 
+			this->platformObstaclesLabel->AutoSize = true;
+			this->platformObstaclesLabel->Location = System::Drawing::Point(155, 4);
+			this->platformObstaclesLabel->Name = L"platformObstaclesLabel";
+			this->platformObstaclesLabel->Size = System::Drawing::Size(54, 13);
+			this->platformObstaclesLabel->TabIndex = 3;
+			this->platformObstaclesLabel->Text = L"Obstacles";
+			// 
+			// platformHeightLabel
+			// 
+			this->platformHeightLabel->AutoSize = true;
+			this->platformHeightLabel->Location = System::Drawing::Point(4, 55);
+			this->platformHeightLabel->Name = L"platformHeightLabel";
+			this->platformHeightLabel->Size = System::Drawing::Size(38, 13);
+			this->platformHeightLabel->TabIndex = 4;
+			this->platformHeightLabel->Text = L"Height";
+			// 
+			// platformStabilityLabel
+			// 
+			this->platformStabilityLabel->AutoSize = true;
+			this->platformStabilityLabel->Location = System::Drawing::Point(4, 72);
+			this->platformStabilityLabel->Name = L"platformStabilityLabel";
+			this->platformStabilityLabel->Size = System::Drawing::Size(43, 13);
+			this->platformStabilityLabel->TabIndex = 5;
+			this->platformStabilityLabel->Text = L"Stability";
+			// 
+			// platformShapeLabel
+			// 
+			this->platformShapeLabel->AutoSize = true;
+			this->platformShapeLabel->Location = System::Drawing::Point(4, 89);
+			this->platformShapeLabel->Name = L"platformShapeLabel";
+			this->platformShapeLabel->Size = System::Drawing::Size(38, 13);
+			this->platformShapeLabel->TabIndex = 7;
+			this->platformShapeLabel->Text = L"Shape";
+			// 
+			// platformPositionLabel
+			// 
+			this->platformPositionLabel->AutoSize = true;
+			this->platformPositionLabel->Location = System::Drawing::Point(4, 106);
+			this->platformPositionLabel->Name = L"platformPositionLabel";
+			this->platformPositionLabel->Size = System::Drawing::Size(44, 13);
+			this->platformPositionLabel->TabIndex = 8;
+			this->platformPositionLabel->Text = L"Position";
 			// 
 			// PlatformEditor
 			// 
@@ -268,9 +373,11 @@ namespace SampleSFML {
 			this->gameParametersGroupBox->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->playerSpritePixtureBox))->EndInit();
 			this->levelObstaclesGroupBox->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->levelEditorPictureBox))->EndInit();
 			this->tileEditorGroupBox->ResumeLayout(false);
+			this->platformPanel->ResumeLayout(false);
+			this->platformPanel->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->objectPictureBox))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->levelEditorPictureBox))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
