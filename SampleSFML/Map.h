@@ -3,6 +3,8 @@
 
 #include "common.h"
 
+class Tile;
+
 class Map
 {
 public:
