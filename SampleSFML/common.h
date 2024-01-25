@@ -27,4 +27,19 @@ enum Shape
 	OCTOGONAL
 };
 
+float GetFloatFromFStream(std::ifstream& _stream)
+{
+	std::string outputStr;
+	float output;
+
+	if (!_stream.is_open() || _stream.eof())
+	{
+		throw new std::exception("File doesn't exist or is already at the end");
+	}
+	
+	_stream >> outputStr;
+	output = std::stof(outputStr);
+	return output;
+}
+
 #endif
