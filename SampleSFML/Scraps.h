@@ -18,6 +18,7 @@ struct Scraps
 	Shape shape = SQUARE;
 	sf::Sprite sprite;
 	void Save();
+	void Load();
 };
 
 #endif // !SCRAPS_H
