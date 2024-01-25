@@ -9,8 +9,9 @@ struct Spike
 	float width;
 	int numbers;
 	sf::Vector2f pos;
-	sf::Sprite sprite;
+	//sf::Sprite sprite;
 	void Save();
+	void Load();
 };
 
 #endif // !SPIKE_H
